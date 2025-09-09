@@ -1,0 +1,3 @@
+[submodule "gw-detectors"]
+	path = gw-detectors
+	url = https://git.ligo.org/reed.essick/gw-detectors
