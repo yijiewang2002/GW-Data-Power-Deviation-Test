@@ -2,9 +2,7 @@
 
 This repository contains a collection of scripts developed to compute and analyze the **data power statistic** \(d,d\), a key quantity in gravitational-wave (GW) data analysis. The statistic \(d,d\) is the **noise-weighted norm** of detector strain data and plays an important role in understanding detection thresholds, likelihood formulations, and statistical properties of GW events.
 
-$$
-(d,d) = 4\,\Re \int_{f_{l}}^{f_{u}} \frac{|\tilde d(f)|^2}{S_n(f)}\,df
-$$
+$$(d,d) =4 \text{Re} \int_0^\infty \frac{ |n(f)+s(f)|^2 }{S_n(f)} df$$
 
 ---
 
