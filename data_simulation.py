@@ -77,7 +77,7 @@ if __name__ == '__main__':
     
 
     '''
-    # This part is for mock data test
+    # This part is for simulated data test
     A = 10e-23
     tau = 0.1 # default 0.1
     f_0 = 100 # default 100
@@ -103,9 +103,6 @@ if __name__ == '__main__':
     plt.show()
     '''
 
-
-
-    
     event_name = np.array(["GW150914", "GW151226", "GW190412", "GW190521", "GW190814"])
     event_d_d = np.array([1179.8667375710907, 5071.358282649014, 2465.7013408534717, 90.57397852105045, 10758.944044792652])
     event_rho_obs = np.array([20.8734236116, 10.847913827419442, 9.818075659653823, 8.126939780443676, 11.608135282243486])
@@ -113,46 +110,7 @@ if __name__ == '__main__':
     event_rho_opt = np.sqrt(event_h_h)
     event_N_bin = np.array([383, 2493, 1191, 26, 4971])
     event_sigma = np.sqrt(4 * event_N_bin + 4 * event_h_h)
-    zero = np.zeros(len(event_d_d))
-
-
-    plt.figure(figsize=(8, 6))
-    plt.scatter(rho_obs, reduced_obs, s=0.7, label='obs SNR-normalized noise-reduced power')
-    #plt.plot(rho_obs_val, up_spread, linestyle='-', color = 'orange')
-    #plt.plot(rho_obs_val, lw_spread, linestyle='-', color = 'orange')
-    plt.xlabel(r' $\rho_{obs}$ ')
-    plt.ylabel(r'[(d,d) - 2$N_{bin}$]/ $\rho_{obs}^2$ ')
-
-    event_reduced_obs = (event_d_d-2*event_N_bin)/event_rho_obs**2
-    
-    plt.scatter(event_rho_obs, event_reduced_obs, color='red', s=2.0, label='events')
-    plt.legend()
-    plt.show()
-
-
-
-    
-
-# h_h residual plot
-    plt.figure(figsize=(8, 6))
-    sigma = np.sqrt( 4*N_bin + 4*(s_s_sr_val**2) )
-    sigma2 = 2*sigma
-    line0 = np.zeros(len(s_s_sr_val))
-
-    plt.scatter(s_s_sr, residual_opt, s=0.7, alpha=0.5, label='residual of simulated events')
-    plt.plot(s_s_sr_val, sigma2, linestyle='-', color = 'green')
-    plt.plot(s_s_sr_val, -sigma2, linestyle='-', color = 'green')
-    plt.plot(s_s_sr_val, line0, linestyle='--', color = 'grey')
-    plt.xlabel(r' $\rho_{opt}$ ')
-    plt.ylabel(r'(d,d) - 2$N_{bin}$ - (s,s) ')
-
-    event_residual = event_d_d - 2*event_N_bin - event_h_h
-    plt.scatter(event_rho_opt, event_residual, color='red', s=6.0, label='residual of real events')
-    for i in range(len(event_rho_opt)):
-        plt.text(event_rho_opt[i], event_residual[i], event_name[i], fontsize=6, ha='right', va='top')
-    plt.errorbar(event_rho_opt, zero, yerr=2*event_sigma, fmt='.', color="orange", label='expected deviation')
-    plt.legend()
-    plt.show()
+    zero = np.zeros(len(event_name))
 
 
 # obs SNR residual plot
@@ -178,8 +136,5 @@ if __name__ == '__main__':
     plt.show()
     
 
-# cd C:\Users\fengz\OneDrive\Desktop\research\"2025 summer"\"model simulation"
-# python data_simulation.py ..\GW150914\H1_strain_4096s_4096Hz.hdf5
-
-# on linux
-# python data_simulation.py ../GW150914/H1_strain_4096s_4096Hz.hdf5
+# Example Call
+# python data_simulation.py
