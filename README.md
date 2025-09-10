@@ -17,6 +17,7 @@ cd GW-Data-Power-Deviation-Test
 
 # 3) Make the submodule importable (editable/dev mode)
 pip install -e gw-detectors/
+```
 
 ## Dependencies
 numpy
