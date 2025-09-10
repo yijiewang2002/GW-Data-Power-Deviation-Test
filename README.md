@@ -32,5 +32,7 @@ pycbc
 
 ## Script Description
 data_norm.py: calculates the data power of a given event
+
 extract_snr.py: extracts the observed and optimal SNR from a parameter estimation sample associated with an event
+
 data_simulation.py: simulates GW events and plots the residual power of these simulated events along with the residual power of five real events
