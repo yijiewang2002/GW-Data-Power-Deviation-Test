@@ -20,7 +20,12 @@ pip install -e gw-detectors/
 ```
 
 ## Dependencies
+h5py
+
 numpy
+
 scipy
+
 matplotlib
+
 pycbc
